@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<%- include("./partials/head.ejs") %>
+</head>
+<body>
+    <header>
+        <%- include("./partials/header.ejs") %>
+    </header>
+    <h1 class="title">List of Data</h1>
+    <div class="container">
+        <% for (let data of datas) { %>
+            <div class="card">
+                <img src="<%=data.image[0]%>" alt="">
+                <h3><a href="/datas/<%=data.id%>"><%=data.name%></a></h3>
+            </div>
+        <% } %>
+
+
+
+    </div>
+</body>
+</html>
