@@ -30,9 +30,9 @@ header {
     background-color: black;
     width: 258px;
 }
-img {
-    width: 258px;
-    height: 397px;
+.container > img {
+    width: 15%;
+    height: 15%;
 }
 ul,li {
     list-style: none;
