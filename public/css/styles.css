@@ -1,0 +1,40 @@
+
+a, a:hover, a:visited, a:active{
+    text-decoration: none;
+    color: gold;
+}
+body {
+    text-align: center;
+    box-sizing: border-box;
+    background-color:gold ;
+}
+header {
+    display: flex;
+    background-color: black;
+    color: gold;
+    font-size: 1.5em;
+    padding: 10px;
+    justify-content: space-evenly;
+    position: sticky;
+    top: 0;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90vw;
+    gap: 1em;
+}
+.card {
+    border: 5px solid  gray;
+    background-color: black;
+    width: 258px;
+}
+img {
+    width: 258px;
+    height: 397px;
+}
+ul,li {
+    list-style: none;
+    padding: 0;
+}
