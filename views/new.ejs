@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partials/head.ejs") %>
+</head>
+<body>
+    <header>
+        <%- include("./partials/header.ejs") %>
+    </header>
+    <h1 class="title">Enter New Movie</h1>
+    <form action="/movies" method="POST">
+        Name: <input type="text" name="name" value="" placeholder="Name"> <br>
+        Rating: <input type="text" name="rating" value="" placeholder="Rating, 1 to 5"> <br>
+        Price: <input type="text" name="price" value="" placeholder="Price, 1 to 5"><br>
+        Street Address: <input type="text" name="cast" value="" placeholder=""> <br>
+        City: <input type="text" name="cast" value="" placeholder=""> <br>
+        State: <input type="text" name="cast" value="" placeholder=""> <br>
+        Image: <input type="url" name="poster" value="" placeholder="Copy Data URLs Here"> <br>
+        Food Images: <input type="url" name="poster" value="" placeholder="Copy Food URLs Here"> <br>
+        <input type="submit">
+    </form>
+</body>
+</html>

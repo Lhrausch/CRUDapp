@@ -51,7 +51,7 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //     console.log("Added Data");
 // })
 
-// Movie.collection.drop()
+// Data.collection.drop()
 
 
 
