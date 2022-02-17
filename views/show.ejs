@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<%- include("./partials/head.ejs") %>
+</head>
+<body>
+    <header>
+        <%- include("./partials/header.ejs") %>
+    </header>
+    <h1 class="title">About <%=datas.name%></h1>
+    <div class="info-container">
+        <img src="<%=datas.image%>" alt=""><br>
+        <ul>
+            <li>Rating: <%=datas.rating%>out of 5</li>
+            <li>Price: <%=datas.price%>out of 5</li>
+            <li>Tags: <%=datas.tags.join(", ")%></li>
+            <li>Address: <%=datas.location.streetNumber%> <%=datas.location.city%> <%=datas.location.state%></li>
+        </ul> <br>
+        <form class="show" action="/datass/<%=datas.id%>?_method=DELETE" method="POST">
+            <input class="delete" type="submit" value="Delete datas">
+        </form>
+        <a href="/datas/<%=datas.id%>/edit"><button class="show edit">Edit Datas Details</button></a>
+</body>
+</html>
