@@ -32,20 +32,44 @@ header {
     border: 5px solid  rgba(245, 245, 245, 0.501);
     background-color: #36454F;
     width: 20vw;
+    border-radius: 15px;
 }
 .card > img {
     width: 20vw;
     height: 15vw;
 }
+.info-container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    background-color: #36454F;
+    color: #c5a214; 
+    width: 90vw;
+    margin: auto;
+}
+.info-card {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    background-color: #36454F;
+    color: #c5a214; 
+    width: 90vw;
+}
+.info-container>img {
+    align-self: center;
+}
+img {
+    border-radius: 15px;
+    width: 65vw;
+}
 ul,li {
     list-style: none;
     padding: 0;
 }
-form {
-    text-align: left;
-}
 .show {
-    display: inline;
+    color: whitesmoke;
 }
 .delete {
     background-color: red;

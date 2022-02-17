@@ -92,8 +92,6 @@ app.get("/datas/:id", (req, res) => {
 
 // post route to store serach param
 app.post("/datas/search/", (req, res) => {
-  req.body.image = req.body.image.split(", ")
-  req.body.foodimage = req.body.foodimage.split(", ")
   Data.find({title: req.body.searchString}, (err, foundData) => {
       res.render("index.ejs", 
       {
@@ -106,15 +104,19 @@ app.post("/datas/search/", (req, res) => {
 
 // route to ADD new data and redirect to index
 app.post("/datas", (req, res) => {
-  console.log(req.body.image);
-  console.log(req.body.foodimage);
-  // req.body.image = req.body.image.split(",")
-  // req.body.foodimage = req.body.foodimage.split(",")
-  if(req.body.visited === 'on'){
-    req.body.visited = true;
-} else {
-    req.body.visited = false;
-}
+
+    if(req.body.visited === 'on'){
+      req.body.visited = true;
+  } else {
+      req.body.visited = false;
+  }
+
+  req.body.location = {
+    city:  req.body.city ,
+    state:  req.body.state ,
+    streetNumber:  req.body.streetNumber,
+    zipcode: req.body.zipcode,
+  }
   Data.create(req.body, (err, newData) => {
       if (err) {
           res.send(err)
@@ -136,15 +138,21 @@ app.get("/datas/:id/edit", (req, res) => {
 })
 ///////////////////////////   change route
 app.put("/datas/:id", (req,res) => {
-  // req.body.cast = req.body.cast.split(", ")
+  req.body.location = {
+    city:  req.body.city ,
+    state:  req.body.state ,
+    streetNumber:  req.body.streetNumber,
+    zipcode: req.body.zipcode,
+  }
   Data.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedData) => {
-      res.redirect("/data")
+      console.log(req.body);
+      res.redirect("/datas")
   })
 })
 
 app.delete("/datas/:id", (req,res) => {
   Data.findByIdAndRemove(req.params.id, (err, foundData) => {
-      res.redirect("/data")
+      res.redirect("/datas")
   })
 })
 
