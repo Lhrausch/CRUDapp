@@ -7,18 +7,22 @@
     <header>
         <%- include("./partials/header.ejs") %>
     </header>
-    <h1 class="title">About <%=datas.name%></h1>
+    <h1 class="title">About </h1>
     <div class="info-container">
-        <img src="<%=datas.image%>" alt=""><br>
+        <div class="img-carousel">
+            <% for (let i = 0; i < restaurant.foodImage.length; i++) { %> 
+            <img src="<%=restaurant.foodImage[i]%>" alt="">    
+        <% } %>
+    </div>
         <ul>
-            <li>Rating: <%=datas.rating%> out of 5 </li>
-            <li>Price: <%=datas.price%> out of 5</li>
-            <li>Tags: <%=datas.tags.join(", ")%></li>
-            <li>Address: <%=datas.location.streetNumber%>, <%=datas.location.city%>, <%=datas.location.state%> <%=datas.location.zipcode%></li>
+            <li>Rating: <%=restaurant.rating%> out of 5 </li>
+            <li>Price: <%=restaurant.price%> out of 5</li>
+            <li>Tags: <%=restaurant.tags.join(", ")%></li>
+            <li>Address: <%=restaurant.location.streetNumber%>, <%=restaurant.location.city%>, <%=restaurant.location.state%> <%=restaurant.location.zipcode%></li>
         </ul> <br>
-        <form class="show" action="/datas/<%=datas.id%>?_method=DELETE" method="POST">
-            <input class="delete" type="submit" value="Delete datas">
+        <form class="show" action="/<%=restaurant.id%>?_method=DELETE" method="POST">
+            <input class="delete" type="submit" value="Delete restaurant">
         </form>
-        <a href="/datas/<%=datas.id%>/edit"><button class="show edit">Edit Datas Details</button></a>
+        <a href="/<%=restaurant.id%>/edit"><button class="show edit">Edit Restaurant Details</button></a>
 </body>
 </html>

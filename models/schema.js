@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
-const dataSchema = new Schema({
+const restaurantSchema = new Schema({
     name: {type: String, required:true, trim: true},
     rating: {type: Number, required:true, trim: true, min: 1, max: 5},
     price: {type: Number, required:true, trim: true, min: 1, max: 5},
@@ -18,6 +18,6 @@ const dataSchema = new Schema({
 }, {timestamp: true})
 
 
-const Data = mongoose.model("Data", dataSchema)
+const restaurantCollection = mongoose.model("Restaurant", restaurantSchema)
 
-module.exports = Data
+module.exports = restaurantCollection

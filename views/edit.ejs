@@ -7,20 +7,20 @@
     <header>
         <%- include("./partials/header.ejs") %>
     </header>
-    <h1 class="title">Enter New Data</h1>
-    <form action="/datas/<%=datas.id%>?_method=PUT" method="POST">
-        Name: <input type="text" name="name" value="<%=datas.name%>" > <br>
-        Rating: <input type="text" name="rating" value="<%=datas.rating%>" > Number value 1-5<br>
-        Price: <input type="text" name="price" value="<%=datas.price%>" > Number value 1-5<br>
-        Street Address: <input type="Street Address" name="streetNumber" value="<%=datas.location.streetNumber%>" > <br>
-        City: <input type="text" name="city" value="<%=datas.location.city%>" > <br>
-        State: <input type="text" name="state" value="<%=datas.location.state%>" > <br>
-        Zipcode: <input type="text" name="zipcode" value="<%=datas.location.zipcode%>" > <br>
-        Tags: <input type="text" name="tags" value="<%=datas.tags%>" > <br>
-        Image: <input type="text" name="image" value="<%=datas.image%>"> <br>
-        Food Images: <input type="text" name="foodImage" value="<%=datas.foodImage%>" > <br>
+    <h1 class="title">Enter New Restaurant</h1>
+    <form action="/<%=restaurant.id%>?_method=PUT" method="POST">
+        Name: <input type="text" name="name" value="<%=restaurant.name%>" > <br>
+        Rating: <input type="text" name="rating" value="<%=restaurant.rating%>" > Number value 1-5<br>
+        Price: <input type="text" name="price" value="<%=restaurant.price%>" > Number value 1-5<br>
+        Street Address: <input type="Street Address" name="streetNumber" value="<%=restaurant.location.streetNumber%>" > <br>
+        City: <input type="text" name="city" value="<%=restaurant.location.city%>" > <br>
+        State: <input type="text" name="state" value="<%=restaurant.location.state%>" > <br>
+        Zipcode: <input type="text" name="zipcode" value="<%=restaurant.location.zipcode%>" > <br>
+        Tags: <input type="text" name="tags" value="<%=restaurant.tags%>" > <br>
+        Image: <input type="text" name="image" value="<%=restaurant.image%>"> <br>
+        Food Images: <input type="text" name="foodImage" value="<%=restaurant.foodImage%>" > <br>
         Visited: <input type="checkbox" name ="visited"             
-        <% if (datas.visited == true) { %>
+        <% if (restaurant.visited == true) { %>
             checked
        <% } %>
          value=""  > <br>

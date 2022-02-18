@@ -4,11 +4,11 @@
 const express = require('express');
 const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
+const Restaurant = require('./models/schema.js');
 const app = express ();
 const db = mongoose.connection;
 require('dotenv').config()
-const Data = require ("./models/schema.js");
-const seedData = require("./models/seed.js")
+const seedRestaurant = require("./models/seed.js")
 //___________________
 //Port
 //___________________
@@ -46,12 +46,12 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
 
-// Data.create(seedData, (err, data) => {
+// Restaurant.create(seedRestaurant, (err, data) => {
 //     if (err) console.log(err.message);
 //     console.log("Added Data");
 // })
 
-// Data.collection.drop()
+// Restaurant.collection.drop()
 
 
 
@@ -59,17 +59,17 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 // Routes
 //___________________
 //localhost:3000
-app.get("/datas", (req, res) => {
-  Data.find({}, (err, allData) => {
+app.get("/", (req, res) => {
+  Restaurant.find({}, (err, allRestaurants) => {
       res.render("index.ejs",
       {
-          datas: allData,
+          restaurants: allRestaurants,
           tabTitle: "Data Home"
       })
   })    
 })
 //// create a new data
-app.get("/datas/new", (req, res) => {
+app.get("/new/", (req, res) => {
   res.render("new.ejs",
   {
       tabTitle: "Add New Data"
@@ -77,11 +77,11 @@ app.get("/datas/new", (req, res) => {
 })
 
 ///// read // show route
-app.get("/datas/:id", (req, res) => {
-  Data.findById(req.params.id, (err, foundData) => {
+app.get("/:id/", (req, res) => {
+  Restaurant.findById(req.params.id, (err, foundRestaurant) => {
       res.render("show.ejs", 
       {
-          datas: foundData,
+          restaurant: foundRestaurant,
           tabTitle: "Data Info"
       })
   })
@@ -91,11 +91,12 @@ app.get("/datas/:id", (req, res) => {
 
 
 // post route to store serach param
-app.post("/datas/search/", (req, res) => {
-  Data.find({title: req.body.searchString}, (err, foundData) => {
+app.post("/search/", (req, res) => {
+  let city = location.city
+  Restaurant.find({city: req.body.searchString}, (err, foundRestaurants) => {
       res.render("index.ejs", 
       {
-          datas: foundData,
+          restaurants: foundRestaurants,
           tabTitle: "Search Results"
       })
   })
@@ -103,7 +104,7 @@ app.post("/datas/search/", (req, res) => {
 
 
 // route to ADD new data and redirect to index
-app.post("/datas", (req, res) => {
+app.post("/", (req, res) => {
 
     if(req.body.visited === 'on'){
       req.body.visited = true;
@@ -117,42 +118,42 @@ app.post("/datas", (req, res) => {
     streetNumber:  req.body.streetNumber,
     zipcode: req.body.zipcode,
   }
-  Data.create(req.body, (err, newData) => {
+  Restaurant.create(req.body, (err, newData) => {
       if (err) {
           res.send(err)
       } else {
-          res.redirect("/datas")
+          res.redirect("/")
       }
   })
 })
 //// edit route
-app.get("/datas/:id/edit", (req, res) => {
-  Data.findById(req.params.id, (err, foundData) => {
+app.get("/:id/edit/", (req, res) => {
+  Restaurant.findById(req.params.id, (err, foundRestaurant) => {
       res.render("edit.ejs", 
           {
           tabTitle: "Edit Data Details",
-          datas: foundData,
+          restaurant: foundRestaurant,
           }
       )
   })
 })
 ///////////////////////////   change route
-app.put("/datas/:id", (req,res) => {
+app.put("/:id/", (req,res) => {
   req.body.location = {
     city:  req.body.city ,
     state:  req.body.state ,
     streetNumber:  req.body.streetNumber,
     zipcode: req.body.zipcode,
   }
-  Data.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedData) => {
+  Restaurant.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedData) => {
       console.log(req.body);
-      res.redirect("/datas")
+      res.redirect("/")
   })
 })
 
-app.delete("/datas/:id", (req,res) => {
-  Data.findByIdAndRemove(req.params.id, (err, foundData) => {
-      res.redirect("/datas")
+app.delete("/:id/", (req,res) => {
+  Restaurant.findByIdAndRemove(req.params.id, (err, foundRestaurant) => {
+      res.redirect("/")
   })
 })
 

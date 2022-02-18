@@ -7,16 +7,16 @@
     <header>
         <%- include("./partials/header.ejs") %>
     </header>
-    <h1 class="title">Enter New Data</h1>
-    <form action="/datas" method="POST">
+    <h1 class="title">Enter New Restaurant</h1>
+    <form action="/restaurants" method="POST">
         Name: <input type="text" name="name" value="" placeholder="Name"> <br>
         Rating: <input type="text" name="rating" value="" placeholder="Rating, 1 to 5"> <br>
         Price: <input type="text" name="price" value="" placeholder="Price, 1 to 5"><br>
         Street Address: <input type="text" name="streetNumber" value="" placeholder="Enter Street Address"> <br>
         City: <input type="text" name="city" value="" placeholder="Enter State"> <br>
         State: <input type="text" name="state" value="" placeholder="Enter State Abbv."> <br>
-        Tags: <input type="text" name="tags" value="" placeholder="Enter Data Tags"> <br>
-        Image: <input type="text" name="image" value="" placeholder="Copy Data URLs Here"> <br>
+        Tags: <input type="text" name="tags" value="" placeholder="Enter Restaurant Tags"> <br>
+        Image: <input type="text" name="image" value="" placeholder="Copy Restaurant URLs Here"> <br>
         Food Images: <input type="text" name="foodImage" value="" placeholder="Copy Food URLs Here"> <br>
         Visited: <input type="checkbox" name ="visited" > <br>
         <input type="submit">

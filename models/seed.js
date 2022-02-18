@@ -25,7 +25,7 @@ module.exports = [
             },
         image:["https://media-cdn.tripadvisor.com/media/photo-m/1280/17/22/f4/f8/dining-area.jpg"],
         tags: ["Rustic-chic, locally-sourced, American"],
-        foodImage: ["https://media-cdn.tripadvisor.com/media/photo-w/0e/87/60/85/photo3jpg.jpg, https://media-cdn.tripadvisor.com/media/photo-w/0d/d7/81/a0/braised-short-ribs.jpg"],
+        foodImage: ["https://media-cdn.tripadvisor.com/media/photo-w/0e/87/60/85/photo3jpg.jpg"," https://media-cdn.tripadvisor.com/media/photo-w/0d/d7/81/a0/braised-short-ribs.jpg"],
     },
     // {
     //     name: "",
@@ -67,7 +67,7 @@ module.exports = [
             },
         image:["https://www.austinchronicle.com/binary/3dfb/food_feature8-3.jpg"],
         tags: ["Asian Fusion, Vegetarian, Vietnamese"],
-        foodImage: ["https://www.austinchronicle.com/binary/792b/food_feature8-4.jpg, https://www.austinchronicle.com/binary/5e33/food_feature8-2.jpg, https://www.austinchronicle.com/binary/fbdd/food_feature8-1.jpg"],
+        foodImage: ["https://www.austinchronicle.com/binary/792b/food_feature8-4.jpg"," https://www.austinchronicle.com/binary/5e33/food_feature8-2.jpg", "https://www.austinchronicle.com/binary/fbdd/food_feature8-1.jpg"],
     },
 
 ]

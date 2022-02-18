@@ -1,7 +1,12 @@
-
+*{
+    font-family: "lobster";
+}
 a, a:hover, a:visited, a:active{
     text-decoration: none;
     color: #c5a214;
+}
+a:hover , button:hover {
+    transform: scale(1.25);
 }
 body {
     text-align: center;
@@ -38,6 +43,9 @@ header {
     width: 20vw;
     height: 15vw;
 }
+.card > img:hover {
+    transform: scale(2);
+}
 .info-container {
     display: flex;
     flex-direction: column;
@@ -56,9 +64,11 @@ header {
     background-color: #36454F;
     color: #c5a214; 
     width: 90vw;
+
 }
 .info-container>img {
     align-self: center;
+
 }
 img {
     border-radius: 15px;

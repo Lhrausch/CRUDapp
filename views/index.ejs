@@ -7,12 +7,12 @@
     <header>
         <%- include("./partials/header.ejs") %>
     </header>
-    <h1 class="title">List of Data</h1>
+    <h1 class="title">List of Restaurant(s)</h1>
     <div class="container">
-        <% for (let data of datas) { %>
+        <% for (let restaurant of restaurants) { %>
             <div class="card">
-                <img src="<%=data.image[0]%>" alt="">
-                <h3><a href="/datas/<%=data.id%>"><%=data.name%></a></h3>
+                <img src="<%=restaurant.image[0]%>" alt="">
+                <a href="/<%=restaurant.id%>"><h3><%=restaurant.name%></h3></a>
             </div>
         <% } %>
 
