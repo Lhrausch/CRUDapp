@@ -1,11 +1,14 @@
+
+
 *{
     font-family: "lobster";
+    font-size: 1.025em;
 }
 a, a:hover, a:visited, a:active{
     text-decoration: none;
     color: #c5a214;
 }
-a:hover , button:hover {
+a:hover , button:hover, input.delete:hover {
     transform: scale(1.25);
 }
 body {
@@ -14,7 +17,12 @@ body {
     background-color: #c5a214;
 }
 h1 {
-    color: #36454F
+    color: #36454F;
+    font-size: 2em;
+}
+h3 {
+    color: #c5a214;
+    font-size: 1.25em;
 }
 header {
     display: flex;
@@ -39,11 +47,11 @@ header {
     width: 20vw;
     border-radius: 15px;
 }
-.card > img {
+.card > a > img {
     width: 20vw;
     height: 15vw;
 }
-.card > img:hover {
+.card > a > img:hover {
     transform: scale(2);
 }
 .info-container {
@@ -55,27 +63,20 @@ header {
     color: #c5a214; 
     width: 90vw;
     margin: auto;
+    font-size: 1.5em;
 }
-.info-card {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    flex-wrap: wrap;
-    background-color: #36454F;
-    color: #c5a214; 
-    width: 90vw;
 
-}
-.info-container>img {
-    align-self: center;
-
-}
 img {
     border-radius: 15px;
-    width: 65vw;
 }
+.info-container > img {
+    align-self: center;
+}
+
 .carousel {
     display: none;
+    width: 35vw;
+    height: 50vw;
 }
 /* .carousel:first-of-type {
 display: block;
@@ -93,10 +94,19 @@ ul,li {
 .edit {
     background-color: blue;
 }
+
+#flex-show {
+    display: flex;
+   align-items: center;
+    justify-content: center; 
+    gap: 2em;
+}
 span  {
+    display: flex;
     font-size: 2em;
     cursor: pointer;
 }
 .previous:hover , .next:hover {
-    transform: scale(1.5);
+    transform: scale(1.25);
+    
 }
