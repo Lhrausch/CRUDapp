@@ -118,6 +118,8 @@ app.post("/", (req, res) => {
     streetNumber:  req.body.streetNumber,
     zipcode: req.body.zipcode,
   }
+  req.body.image = req.body.image.split(", ")
+  req.body.image = req.body.foodImage.split(", ")
   Restaurant.create(req.body, (err, newData) => {
       if (err) {
           res.send(err)

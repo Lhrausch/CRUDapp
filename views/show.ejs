@@ -7,13 +7,19 @@
     <header>
         <%- include("./partials/header.ejs") %>
     </header>
-    <h1 class="title">About </h1>
+    <h1 class="title">About <%=restaurant.name %></h1>
     <div class="info-container">
+        <div class="previous">
+            <span class="lnr lnr-arrow-left-circle"></span>
+        </div>
         <div class="img-carousel">
             <% for (let i = 0; i < restaurant.foodImage.length; i++) { %> 
-            <img src="<%=restaurant.foodImage[i]%>" alt="">    
+            <img class="carousel" src="<%=restaurant.foodImage[i]%>" alt=""/>  
         <% } %>
-    </div>
+        </div>
+        <div class="next">
+            <span class="lnr lnr-arrow-right-circle"></span>
+        </div> 
         <ul>
             <li>Rating: <%=restaurant.rating%> out of 5 </li>
             <li>Price: <%=restaurant.price%> out of 5</li>

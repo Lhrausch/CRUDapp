@@ -74,6 +74,12 @@ img {
     border-radius: 15px;
     width: 65vw;
 }
+.carousel {
+    display: none;
+}
+/* .carousel:first-of-type {
+display: block;
+} */
 ul,li {
     list-style: none;
     padding: 0;
@@ -86,4 +92,11 @@ ul,li {
 }
 .edit {
     background-color: blue;
+}
+span  {
+    font-size: 2em;
+    cursor: pointer;
+}
+.previous:hover , .next:hover {
+    transform: scale(1.5);
 }
